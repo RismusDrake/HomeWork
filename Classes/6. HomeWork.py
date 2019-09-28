@@ -5,17 +5,45 @@
 
 
 
-class Square:
-	def __init__(self, o, s):
+class Square:																				#Создание класса Square
+
+	def __init__(self, o, n):																#Создание функции с 2-мя переменными
 		self.object = o
-		self.storona = s
-	def change_size(self):
-		if o<0:
-			return o == o - b * 2
+		self.number = n
+
+	def change_size(self):																	#Создание функции change_size
+		if self.number < 0:
+			return self.number
 		else:
-			return o == o + b * 2
-	print(change_size)
-stor = Square(15, 10)
-print(stor)
-print(stor.object)
-print(stor.storona)
+			return self.number
+	print('Создано')																		#Проверка
+
+stor = Square(int(input('Чему равны стороны объекта Square (см)? ')),
+	(int(input('Введите число: '))))														#Задание параметров
+
+#print(stor)																				#Вывод результата
+print('Каждая сторона объекта Square была изменена на:', stor.change_size(), 'см')
+
+
+
+'''Если интересно сколько сторон объекта Square
+class Square:
+
+	def __init__(self, o, n, s):
+		self.object = o
+		self.number = n
+		self.storona = s
+
+	def change_size(self):
+		if self.number < 0:
+			return self.object + self.storona * self.number
+		else:
+			return self.object + self.storona * self.number
+	print('Создано')
+
+stor = Square(int(input('Чему равны стороны объекта Square (см)? ')), 
+	(int(input('Введите число: '))), 
+	(int(input('Количество сторон объекта: '))))
+
+#print(stor)
+print(int(input('Каждая сторона объекта Square была изменена на:', stor.change_size(), 'см')))'''

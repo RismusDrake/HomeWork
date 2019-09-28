@@ -4,22 +4,19 @@ http://www.nbrb.by/APIHelp/ExRates'''
 
 
 
-import requests
-from bs4 import BeautifulSoup
+import requests															#Импорт библиотеки requests
+from bs4 import BeautifulSoup											#Взятие отдельного элемента из библиотеки requests
 
-
-def get_html(url):
+def get_html(url):														#Создание функции get_html
 	r = requests.get(url)
 	return r.text
 
-
-def get_data(html):
+def get_data(html):														#Создание функции get_data
 	soup = BeautifulSoup(html, 'lxml')
-	Currency = {"Cur_ID":145,"Date":"2019-09-23T00:00:00","Cur_Abbreviation":"USD","Cur_Scale":1,"Cur_Name":"Доллар США","Cur_OfficialRate":2.0412}, {"Cur_ID":290,"Date":"2019-09-23T00:00:00","Cur_Abbreviation":"UAH","Cur_Scale":100,"Cur_Name":"Гривен","Cur_OfficialRate":8.3587}, {"Cur_ID":298,"Date":"2019-09-23T00:00:00","Cur_Abbreviation":"RUB","Cur_Scale":100,"Cur_Name":"Российских рублей","Cur_OfficialRate":3.1980}
+	Currency = soup.find('body').text
 	return Currency
 
-
-def main():
-	url = 'http://www.nbrb.by/API/ExRates/Rates'
+def main():																#Создание функции main и вывод результата
+	url = 'http://www.nbrb.by/api/exrates/rates?periodicity=0'
 	print(get_data(get_html(url)))
 main()

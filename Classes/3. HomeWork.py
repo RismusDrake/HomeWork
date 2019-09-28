@@ -6,14 +6,18 @@
 
 
 
-class Person:
-	def __init__(self, c,n,f):
+class Person:													#Создание класса Person
+
+	def __init__(self, c,n,f):									#Создание 3-х переменных для данных
 		self.cval = c
 		self.name = n
 		self.familiya = f
-	print('Создано')
-p = Person(1, int(input('Имя сотрудника: ')), (int(input('Фамилия сотрудника: '))))
-print(p)
-print(p.cval)
-print(p.name)
-print(p.familiya)
+	print('Создано')											#Проверка
+
+p = Person(1, str(input('Укажите имя сотрудника: ')), 
+	(str(input('Укажите фамилию сотрудника: '))))				#Ввод данных сотрудника
+
+#print(p)														#Вывод результата
+print('Имя сотрудника: ', p.name)
+print('Фамилия сотрудника:', p.familiya)
+print('Квалификация сотрудника:', p.cval)

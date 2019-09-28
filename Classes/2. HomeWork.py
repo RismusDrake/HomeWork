@@ -4,15 +4,17 @@
 
 
 
-import math
-class Circle:
-	def __init__(self, r):
+import math													#Импорт библиотеки математики
+
+class Circle:												#Создание класса Circle
+
+	def __init__(self, r):									#Создание функции r
 		self.radius = r
-	def area(self):
-		return self.radius * self.radius * math.pi
-	print('Создано')
-c = Circle(5)
-print(c)
-print(c.radius)
-s = c.radius * c.radius * math.pi
-print(s)
+
+	def area(self):											#Создание функции area
+		return self.radius ** 2 * math.pi
+	print('Создано')										#Проверка
+
+c = Circle(int(input('Радиус круга = ')))					#Ввод радиуса круга
+#print(c)
+print('Площаль круга =', c.area())							#Вывод результата

@@ -5,7 +5,7 @@
 def pure_function(a,b):						#Создание функции
 	temp = a + 2*b							
 	return temp / (2*a + b)					#Возвращение функции
-print(pure_function)						#Вывод результата
+print(pure_function(4,5))					#Вывод результата
 
 
 

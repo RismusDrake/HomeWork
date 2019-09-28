@@ -4,31 +4,17 @@
 
 
 
-class Triangle:
-	def __init__(self,o,v):
+class Triangle:													#Создание класса Triangle
+
+	def __init__(self, o, v):									#Создание 2-е стороны фигур
 		self.osnovanie = o
 		self.visota = v
-	def area(self):
+
+	def area(self):												#Создание функции area
 		return 1/2 * self.osnovanie * self.visota
 	print('Создано')
-S = Triangle(10, 25)
-print(S)
-print(S.osnovanie)
-print(S.visota)
-area = 1/2 * S.osnovanie * S.visota
-print(area)
 
-
-
-'''#Другой способ
-class Triangle:
-	def __init__(self,o,v):
-		self.osnovanie = o
-		self.visota = v
-	def area(Triangle):
-		return Triangle == 1/2 * self.osnovanie * self.visota
-S = Triangle(input('Основание треугольника: '), input('Высота треугольника: '))
-print(S)
-print(S.osnovanie)
-print(S.visota)
-print(Triangle)'''
+S = Triangle(int(input('Основание треугольника = ')),
+	(int(input('Высота треугольника = '))))						#Вывод результата
+#print(S)
+print('Площадь треугольника = ', S.area())
